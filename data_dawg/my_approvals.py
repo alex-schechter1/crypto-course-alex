@@ -29,4 +29,4 @@ if __name__ == '__main__':
         contract = w3.eth.contract(approval.address, abi = abi)
         token_symbol = contract.functions.symbol().call()
         printed_token = token_symbol if token_symbol else approval.address
-        print(f'approval on {printed_token} on amount of {int.from_bytes(approval.topics[2], byteorder="big")}')
+        print(f'approval on {printed_token} on amount of {int.from_bytes(approval.data, byteorder="big")}')
